@@ -1,0 +1,10 @@
+(library
+  (name CalendarLib)
+  (public_name calendar)
+  (synopsis "Calendar Library")
+  (libraries unix str stdlib-shims)
+  (modules_without_implementation calendar_sig date_sig period time_sig))
+
+(rule
+  (with-stdout-to version.ml
+    (echo "let version = \"%{version:calendar}\"\nlet date = \"\"\n")))
